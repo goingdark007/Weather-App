@@ -3,6 +3,7 @@
 *.log
 *.pyc
 *.swp
+*.env
 .DS_Store
 .atom/
 .build/
@@ -12,34 +13,68 @@
 .swiftpm/
 migrate_working_dir/
 
-# IntelliJ related
+# IntelliJ / Android Studio
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code (uncomment if you don’t want VS Code settings tracked)
 #.vscode/
 
-# Flutter/Dart/Pub related
+# Flutter / Dart / Pub
 **/doc/api/
-**/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
-/coverage/
+build/
+coverage/
+generated_plugin_registrant.dart
 
-# Symbolication related
-app.*.symbols
+# iOS
+**/ios/Flutter/.last_build_id
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Runner/GeneratedPluginRegistrant.*
+ios/ServiceDefinitions.json
+DerivedData/
+
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Pods/
+macos/Runner/GeneratedPluginRegistrant.*
+
+# Android
+/local.properties
+**/android/**/gradle-wrapper.jar
+**/android/.gradle/
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/key.properties
+**/android/app/*.keystore
+**/android/app/*.jks
+**/android/app/release
+**/android/app/profile
+**/android/app/debug
+**/android/app/google-services.json
+
+# Windows
+windows/flutter/generated_plugin_registrant.cc
+
+# Linux
+linux/flutter/generated_plugin_registrant.cc
+
+# Web
+web/.dart_tool/
 
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Symbolication related
+app.*.symbols

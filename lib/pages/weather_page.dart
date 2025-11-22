@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart'; // Importing material design widgets of flutter
 import 'package:flutter6_weather_app/utilities/custom_column.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:lottie/lottie.dart';
 import '../models/weather_model.dart'; // Importing our weather model
 import '../services/weather_service.dart';
@@ -23,12 +22,8 @@ class WeatherPage extends StatefulWidget {
 class _WeatherPageState extends State<WeatherPage> {
 
 
-  /// API key
-  // Getting the api key from the .env file to pass it into the weather service class
-  final apiKey = dotenv.env['WEATHER_API_KEY'] ?? '';
-
   // Creating private object of WeatherService class to pass the API key to it.
-  late final _weatherService = WeatherService(apiKey: apiKey);
+  final _weatherService = WeatherService();
   // Declaring a variable named _weather that will hold a Weather object (from our model).
   // The ? means it can be null — maybe the weather hasn’t been fetched yet.
   // Note we can't directly return anything from an async future function that's why we define

@@ -9,13 +9,8 @@ import 'package:http/http.dart' as http; // importing our HTTP package to send r
 class WeatherService {
 
   /// API key
-  // This declares a variable that will store our API key which comes from weather page.
-  final String apiKey;
-
-
-
-  // Constructor of the class that takes the apiKey
-  WeatherService({required this.apiKey});
+  // This declares a variable that will store our API key which comes from the .env file.
+  final String apiKey = dotenv.env['WEATHER_API_KEY'] ?? '';
 
   /// Function to get API response
   // It is an function that takes a cityName (like "Dhaka"),works asynchronously
@@ -142,9 +137,7 @@ class WeatherService {
 
     final lat = double.parse(coordinates.split(" ")[0]);
     final lon = double.parse(coordinates.split(" ")[1]);
-    // Getting the api key from the .env
     final apiKey = dotenv.env['LOCATION_IQ_KEY'] ?? '';
-
     final url = "https://us1.locationiq.com/v1/reverse?key=$apiKey&lat=$lat&lon=$lon&format=json";
 
     final response = await http.get(Uri.parse(url));
